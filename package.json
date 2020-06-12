@@ -1,0 +1,33 @@
+{
+  "name": "judging-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "judgement:start": "node ./dist/judgement/worker",
+    "dev": "rimraf ./dist/* && tsc -w",
+    "generate-orm-model": "ts-node node_modules/typeorm-model-generator/bin/typeorm-model-generator -h localhost -d online-judge -u postgres -x root -p 5432 -e postgres -o ./src/entities -s public --strictMode=? --generateConstructor --noConfig --namingStrategy=./naming-strategy.ts --cf=param --ce=none --cp=none -a"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/amqplib": "^0.5.13",
+    "@types/js-yaml": "^3.12.3",
+    "@types/node": "^13.13.0",
+    "@types/pluralize": "0.0.29",
+    "change-case": "^4.1.1",
+    "pluralize": "^8.0.0",
+    "prettier": "^2.0.4",
+    "rimraf": "^3.0.2",
+    "typeorm-model-generator": "^0.4.2",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "amqplib": "^0.5.5",
+    "js-yaml": "^3.13.1",
+    "pg": "^8.0.2",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.2.24"
+  }
+}
